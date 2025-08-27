@@ -48,11 +48,11 @@ python main.py
 telegraph-scraper/<br />
 │<br />
 ├── items.py   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;      # Defines the ArticleItem data model<br />
-├── pipelines.py  &nbsp; &nbsp;   # SQLite pipeline<br />
+├── pipelines.py  &nbsp; &nbsp; &nbsp;   # SQLite pipeline<br />
 ├── scraper.py   &nbsp; &nbsp; &nbsp; &nbsp;    # Scraper implementation<br />
 ├── main.py   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;       # Entry point that runs the pipeline<br />
 ├── articles.db  &nbsp; &nbsp; &nbsp; &nbsp;    # SQLite database (generated/updated)<br />
-├── flowchart_telegraph_latest_news.jpg     # workflow<br />
+├── flowchart_telegraph_latest_news.jpg  &nbsp; &nbsp;    # workflow<br />
 ├── requirements.txt<br />
 └── .github/<br />
   &nbsp; &nbsp;  └── workflows/<br />
