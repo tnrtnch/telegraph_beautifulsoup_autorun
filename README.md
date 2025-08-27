@@ -55,8 +55,8 @@ telegraph-scraper/<br />
 ├── flowchart_telegraph_latest_news.jpg     # workflow<br />
 ├── requirements.txt<br />
 └── .github/<br />
-    └── workflows/<br />
-        └── scraper.yml   # GitHub Actions workflow<br />
+  &nbsp; &nbsp;  └── workflows/<br />
+      &nbsp; &nbsp; &nbsp; &nbsp;  └── scraper.yml   # GitHub Actions workflow<br />
 ---
 
 ## ⚙️ GitHub Actions
