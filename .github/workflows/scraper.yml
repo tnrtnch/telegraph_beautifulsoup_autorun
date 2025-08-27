@@ -1,0 +1,46 @@
+name: Telegraph latest news
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # Her saat başı çalışır
+  workflow_dispatch:       # Manuel olarak da tetiklenebilir
+
+permissions:
+  contents: write   # push için gerekli izin
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # push için gerekli
+          fetch-depth: 0              # tüm geçmişi al
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml
+
+      - name: Run scraper
+        run: python main.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles.db
+          if git diff --cached --quiet; then
+            echo "No changes in articles.db"
+          else
+            git commit -m "Update news.db"
+            git pull --rebase origin main   # 🔑 rebase ile uzak commitleri ekle
+            git push
+          fi
