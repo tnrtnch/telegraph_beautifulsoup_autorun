@@ -52,7 +52,7 @@ telegraph-scraper/<br />
 ├── scraper.py   &nbsp; &nbsp; &nbsp; &nbsp;    # Scraper implementation<br />
 ├── main.py   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;       # Entry point that runs the pipeline<br />
 ├── articles.db  &nbsp; &nbsp; &nbsp; &nbsp;    # SQLite database (generated/updated)<br />
-├── flowchart_telegraph_latest_news.jpg  &nbsp; &nbsp;    # workflow<br />
+├── flowchart_telegraph_latest_news.jpg  &nbsp; &nbsp; 
 ├── requirements.txt<br />
 └── .github/<br />
   &nbsp; &nbsp;  └── workflows/<br />
