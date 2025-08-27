@@ -47,16 +47,16 @@ python main.py
 ## 📂 Project Structure
 telegraph-scraper/<br />
 │<br />
-├── items.py        # Defines the ArticleItem data model<br />
-├── pipelines.py    # SQLite pipeline<br />
-├── scraper.py      # Scraper implementation<br />
-├── main.py         # Entry point that runs the pipeline<br />
-├── articles.db     # SQLite database (generated/updated)<br />
+├── items.py   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;      # Defines the ArticleItem data model<br />
+├── pipelines.py  &nbsp; &nbsp;   # SQLite pipeline<br />
+├── scraper.py   &nbsp; &nbsp; &nbsp; &nbsp;    # Scraper implementation<br />
+├── main.py   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;       # Entry point that runs the pipeline<br />
+├── articles.db  &nbsp; &nbsp; &nbsp; &nbsp;    # SQLite database (generated/updated)<br />
 ├── flowchart_telegraph_latest_news.jpg     # workflow<br />
 ├── requirements.txt<br />
 └── .github/<br />
   &nbsp; &nbsp;  └── workflows/<br />
-      &nbsp; &nbsp; &nbsp; &nbsp;  └── scraper.yml   # GitHub Actions workflow<br />
+      &nbsp; &nbsp; &nbsp; &nbsp;  └── scraper.yml  &nbsp; &nbsp;  # GitHub Actions workflow<br />
 ---
 
 ## ⚙️ GitHub Actions
