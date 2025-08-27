@@ -59,6 +59,19 @@ telegraph-scraper/<br />
       &nbsp; &nbsp; &nbsp; &nbsp;  └── scraper.yml  &nbsp; &nbsp;  # GitHub Actions workflow<br />
 ---
 
+## ⏰GitHub Actions (Automated Runs)  <br />
+<br />
+This project includes a workflow at .github/workflows/scraper.yml.<br />
+The workflow:<br />
+<br />
+Runs every hour (via cron job)<br />
+Executes the spider<br />
+Updates articles.db with new data<br />
+Commits changes back to the repository<br />
+You can view run logs under the Actions tab in the repository.<br />
+<br />
+
+---
 ## ⚙️ GitHub Actions
 
 The workflow (.github/workflows/scraper.yml) is configured to:
