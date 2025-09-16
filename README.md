@@ -15,7 +15,6 @@ telegraph<br />
 ├── .github/workflows/             # GitHub Actions workflows<br />
 │&nbsp; &nbsp;  └──actions.yml<br />
 ├──  .gitignore <br />   
-├──  README.md <br /> 
 ├──  articles.db <br /> 
 ├──  flowchart_telegraph_latest_news.jpg <br /> 
 ├──  items.py <br /> 
