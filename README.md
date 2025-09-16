@@ -1,7 +1,7 @@
 # Telegraph.bg News Scraper📰
 
 This project is a simple Python script that scrapes the latest news from telegraph.bg/posledni-novini
- using Requests and BeautifulSoup, and stores the results in a local SQLite database (news.db).
+ using Requests and BeautifulSoup, and stores the results in a local SQLite database (articles.db).
 
 # Features🚀
 
