@@ -13,8 +13,16 @@ class SQLitePipeline:
                 body TEXT,
                 author TEXT,
                 url TEXT UNIQUE,
-                scraped_at TIMESTAMP
+                scraped_at TEXT
             )
+        """)
+        self.conn.commit()
+
+    def clear_old_articles(self):
+        """delete data older than 1 day"""
+        self.cursor.execute("""
+            DELETE FROM articles
+            WHERE scraped_at < datetime('now','-1 day')
         """)
         self.conn.commit()
 
@@ -23,12 +31,19 @@ class SQLitePipeline:
             self.cursor.execute("""
                 INSERT INTO articles (title, body, author, url, scraped_at)
                 VALUES (?, ?, ?, ?, ?)
-            """, (item.title, item.body, item.author, item.url, item.scraped_at))
+            """, (
+                item.get("title"),
+                item.get("body"),
+                item.get("author"),
+                item.get("url"),
+                item.get("scraped_at"),
+            ))
             self.conn.commit()
-            print(f"[+] Saved: {item.title}")
+            print(f"[+] Saved: {item.get('title')}")
         except sqlite3.IntegrityError:
-            print(f"[!] Already exists: {item.url}")
+            print(f"[!] Already exists: {item.get('url')}")
         return item
 
     def close(self):
         self.conn.close()
+

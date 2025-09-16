@@ -3,6 +3,8 @@ from pipelines import SQLitePipeline
 
 def run():
     pipeline = SQLitePipeline()
+    pipeline.clear_old_articles()  
+
     try:
         for item in fetch_articles():
             pipeline.process_item(item)
