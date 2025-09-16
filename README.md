@@ -1,15 +1,20 @@
-🕷️ Telegraph news with BeautifulSoup
-This project downloads current news from telegraph.bg using the beautifulsoup library.
-The collected data is stored in a SQLite database (articles.db) and automatically updated every hour via GitHub Actions.
+# Telegraph.bg News Scraper📰
 
-🚀 Features
-Extracts article title, body, author, using BeautifulSoup library
-Stores all scraped data into a SQLite database (articles.db)
-Automated crawling with GitHub Actions (runs every hour) Database updates are version-controlled via Git commits
-With each data update, only the last day's data remains in the database file; older data is automatically deleted.
+This project is a simple Python script that scrapes the latest news from telegraph.bg/posledni-novini
+ using Requests and BeautifulSoup, and stores the results in a local SQLite database (news.db).
 
+# Features🚀
 
-📂Project Structure <br />
+Scrapes latest news articles from Telegraph.bg
+Extracts:
+Title
+Body
+Author
+Publication date
+Stores results in a SQLite database (news.db)
+Automatically tracks scraping timestamp (scraped_at)
+
+# Project Structure📂<br />
 telegraph<br />
 │<br />
 ├── .github/workflows/             # GitHub Actions workflows<br />
@@ -25,17 +30,37 @@ telegraph<br />
 └──  README.md <br /> 
 <br />
 
+# Requirements⚙️
 
-⏰GitHub Actions (Automated Runs)  <br />
-<br />
-This project includes a workflow at .github/workflows/actions.yml.<br />
-The workflow:<br />
-<br />
-Runs every hour (via cron job)<br />
-Executes the spider<br />
-Deletes data older than one day
-Updates articles.db with new data<br />
-Commits changes back to the repository<br />
-You can view run logs under the Actions tab in the repository.<br />
-<br />
+Python 3.8+
+Dependencies:
+pip install requests beautifulsoup4
+
+# Usage▶️
+
+Run the scraper:
+python scraper.py
+If news.db does not exist, it will be created automatically.
+New articles are inserted into the database with a UTC timestamp.
+
+# Automating with Cron⏰
+A cron job is an automated, scheduled task that runs on a Unix-like system,
+using a special syntax called a cron expression to define its frequency and timing. <br />
+For example to run every hour:
+0 * * * * 
+
+# Example Queries🔍
+
+Open the database in SQLite:
+sqlite3 news.db
+Show last 5 articles:
+SELECT title, pubdate FROM articles ORDER BY id DESC LIMIT 5;
+Count total scraped articles:
+SELECT COUNT(*) FROM articles;
+
+📌 Notes
+
+The CSS selectors in fetch_articles() may need to be adapted if Telegraph.bg changes its HTML structure.
+Extendable: you can easily add JSON/CSV export or more fields.
+
 
