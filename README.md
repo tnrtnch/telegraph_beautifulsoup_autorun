@@ -11,7 +11,7 @@ Title
 Body
 Author
 Publication date
-Stores results in a SQLite database (news.db)
+Stores results in a SQLite database (articles.db)
 Automatically tracks scraping timestamp (scraped_at)
 
 # Project Structure📂<br />
