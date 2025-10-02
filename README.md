@@ -48,19 +48,3 @@ A cron job is an automated, scheduled task that runs on a Unix-like system,
 using a special syntax called a cron expression to define its frequency and timing. <br />
 For example to run every hour:
 0 * * * * 
-
-# Example Queries🔍
-
-Open the database in SQLite:
-sqlite3 news.db
-Show last 5 articles:
-SELECT title, pubdate FROM articles ORDER BY id DESC LIMIT 5;
-Count total scraped articles:
-SELECT COUNT(*) FROM articles;
-
-📌 Notes
-
-The CSS selectors in fetch_articles() may need to be adapted if Telegraph.bg changes its HTML structure.
-Extendable: you can easily add JSON/CSV export or more fields.
-
-
