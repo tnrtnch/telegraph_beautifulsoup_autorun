@@ -2,11 +2,11 @@ name: Telegraph latest news
 
 on:
   schedule:
-    - cron: "0 * * * *"   # Her saat başı çalışır
-  workflow_dispatch:       # Manuel olarak da tetiklenebilir
+    - cron: "0 * * * *"   
+  workflow_dispatch:       
 
 permissions:
-  contents: write   # push için gerekli izin
+  contents: write   
 
 jobs:
   scrape:
@@ -16,8 +16,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          persist-credentials: true   # push için gerekli
-          fetch-depth: 0              # tüm geçmişi al
+          persist-credentials: true   
+          fetch-depth: 0            
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -41,6 +41,6 @@ jobs:
             echo "No changes in articles.db"
           else
             git commit -m "Update news.db"
-            git pull --rebase origin main   # 🔑 rebase ile uzak commitleri ekle
+            git pull --rebase origin main  
             git push
           fi
